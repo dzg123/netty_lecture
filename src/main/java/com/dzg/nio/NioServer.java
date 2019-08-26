@@ -28,7 +28,7 @@ public class NioServer {
             try {
                 int numbers = selector.select();
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
-                selectionKeys.stream().forEach(selectionKey -> {
+                selectionKeys.forEach(selectionKey -> {
                     final SocketChannel client;
                     try {
                         if (selectionKey.isAcceptable()) {
